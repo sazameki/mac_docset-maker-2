@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DD76F9A0486AA7600D96B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
+		8DD76F9F0486AA7600D96B5E /* docsetmaker.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859EA3029092ED04C91782 /* docsetmaker.1 */; };
+		8E7D911E106514E400BE8FDF /* DocumentBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D911D106514E400BE8FDF /* DocumentBuilder.m */; };
+		8E7D92521065290D00BE8FDF /* NSString+RelativePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D92511065290D00BE8FDF /* NSString+RelativePath.m */; };
+		8E7D925510652CB400BE8FDF /* NSString+Tokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D925410652CB400BE8FDF /* NSString+Tokenizer.m */; };
+		8E7D92A310652F7400BE8FDF /* DSInfoRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D929C10652F7400BE8FDF /* DSInfoRepository.m */; };
+		8E7D92A410652F7400BE8FDF /* DSInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D929E10652F7400BE8FDF /* DSInformation.m */; };
+		8E7D92A510652F7400BE8FDF /* DSCommentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D92A010652F7400BE8FDF /* DSCommentParser.m */; };
+		8E7D964510654A7500BE8FDF /* DSTemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D964410654A7500BE8FDF /* DSTemplateManager.m */; };
+		8E7D964B10654AF400BE8FDF /* DSTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D964A10654AF400BE8FDF /* DSTemplate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F9E0486AA7600D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				8DD76F9F0486AA7600D96B5E /* docsetmaker.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB7796FE84155DC02AAC07 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32A70AAB03705E1F00C91783 /* docsetmaker_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = docsetmaker_Prefix.pch; sourceTree = "<group>"; };
+		8DD76FA10486AA7600D96B5E /* docsetmaker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = docsetmaker; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E7D911C106514E400BE8FDF /* DocumentBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentBuilder.h; sourceTree = "<group>"; };
+		8E7D911D106514E400BE8FDF /* DocumentBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentBuilder.m; sourceTree = "<group>"; };
+		8E7D92501065290D00BE8FDF /* NSString+RelativePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RelativePath.h"; sourceTree = "<group>"; };
+		8E7D92511065290D00BE8FDF /* NSString+RelativePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RelativePath.m"; sourceTree = "<group>"; };
+		8E7D925310652CB400BE8FDF /* NSString+Tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tokenizer.h"; sourceTree = "<group>"; };
+		8E7D925410652CB400BE8FDF /* NSString+Tokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tokenizer.m"; sourceTree = "<group>"; };
+		8E7D929B10652F7400BE8FDF /* DSInfoRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSInfoRepository.h; sourceTree = "<group>"; };
+		8E7D929C10652F7400BE8FDF /* DSInfoRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSInfoRepository.m; sourceTree = "<group>"; };
+		8E7D929D10652F7400BE8FDF /* DSInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSInformation.h; sourceTree = "<group>"; };
+		8E7D929E10652F7400BE8FDF /* DSInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSInformation.m; sourceTree = "<group>"; };
+		8E7D929F10652F7400BE8FDF /* DSCommentParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSCommentParser.h; sourceTree = "<group>"; };
+		8E7D92A010652F7400BE8FDF /* DSCommentParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCommentParser.m; sourceTree = "<group>"; };
+		8E7D964310654A7500BE8FDF /* DSTemplateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTemplateManager.h; sourceTree = "<group>"; };
+		8E7D964410654A7500BE8FDF /* DSTemplateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTemplateManager.m; sourceTree = "<group>"; };
+		8E7D964910654AF400BE8FDF /* DSTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTemplate.h; sourceTree = "<group>"; };
+		8E7D964A10654AF400BE8FDF /* DSTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTemplate.m; sourceTree = "<group>"; };
+		C6859EA3029092ED04C91782 /* docsetmaker.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = docsetmaker.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F9B0486AA7600D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* docsetmaker */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				C6859EA2029092E104C91782 /* Documentation */,
+				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = docsetmaker;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				32A70AAB03705E1F00C91783 /* docsetmaker_Prefix.pch */,
+				08FB7796FE84155DC02AAC07 /* main.m */,
+				8E7D911C106514E400BE8FDF /* DocumentBuilder.h */,
+				8E7D911D106514E400BE8FDF /* DocumentBuilder.m */,
+				8E7D964610654A7F00BE8FDF /* info & parsing */,
+				8E7D964710654A9D00BE8FDF /* template */,
+				8E7D964C10654AFA00BE8FDF /* utils */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76FA10486AA7600D96B5E /* docsetmaker */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E7D964610654A7F00BE8FDF /* info & parsing */ = {
+			isa = PBXGroup;
+			children = (
+				8E7D929B10652F7400BE8FDF /* DSInfoRepository.h */,
+				8E7D929C10652F7400BE8FDF /* DSInfoRepository.m */,
+				8E7D929D10652F7400BE8FDF /* DSInformation.h */,
+				8E7D929E10652F7400BE8FDF /* DSInformation.m */,
+				8E7D929F10652F7400BE8FDF /* DSCommentParser.h */,
+				8E7D92A010652F7400BE8FDF /* DSCommentParser.m */,
+			);
+			name = "info & parsing";
+			sourceTree = "<group>";
+		};
+		8E7D964710654A9D00BE8FDF /* template */ = {
+			isa = PBXGroup;
+			children = (
+				8E7D964910654AF400BE8FDF /* DSTemplate.h */,
+				8E7D964A10654AF400BE8FDF /* DSTemplate.m */,
+				8E7D964310654A7500BE8FDF /* DSTemplateManager.h */,
+				8E7D964410654A7500BE8FDF /* DSTemplateManager.m */,
+			);
+			name = template;
+			sourceTree = "<group>";
+		};
+		8E7D964C10654AFA00BE8FDF /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				8E7D92501065290D00BE8FDF /* NSString+RelativePath.h */,
+				8E7D92511065290D00BE8FDF /* NSString+RelativePath.m */,
+				8E7D925310652CB400BE8FDF /* NSString+Tokenizer.h */,
+				8E7D925410652CB400BE8FDF /* NSString+Tokenizer.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		C6859EA2029092E104C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				C6859EA3029092ED04C91782 /* docsetmaker.1 */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F960486AA7600D96B5E /* docsetmaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "docsetmaker" */;
+			buildPhases = (
+				8DD76F990486AA7600D96B5E /* Sources */,
+				8DD76F9B0486AA7600D96B5E /* Frameworks */,
+				8DD76F9E0486AA7600D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = docsetmaker;
+			productInstallPath = "$(HOME)/bin";
+			productName = docsetmaker;
+			productReference = 8DD76FA10486AA7600D96B5E /* docsetmaker */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "docsetmaker" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* docsetmaker */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F960486AA7600D96B5E /* docsetmaker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F990486AA7600D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F9A0486AA7600D96B5E /* main.m in Sources */,
+				8E7D911E106514E400BE8FDF /* DocumentBuilder.m in Sources */,
+				8E7D92521065290D00BE8FDF /* NSString+RelativePath.m in Sources */,
+				8E7D925510652CB400BE8FDF /* NSString+Tokenizer.m in Sources */,
+				8E7D92A310652F7400BE8FDF /* DSInfoRepository.m in Sources */,
+				8E7D92A410652F7400BE8FDF /* DSInformation.m in Sources */,
+				8E7D92A510652F7400BE8FDF /* DSCommentParser.m in Sources */,
+				8E7D964510654A7500BE8FDF /* DSTemplateManager.m in Sources */,
+				8E7D964B10654AF400BE8FDF /* DSTemplate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB927508733DD40010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = docsetmaker_Prefix.pch;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = docsetmaker;
+			};
+			name = Debug;
+		};
+		1DEB927608733DD40010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = docsetmaker_Prefix.pch;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = docsetmaker;
+			};
+			name = Release;
+		};
+		1DEB927908733DD40010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.4;
+			};
+			name = Debug;
+		};
+		1DEB927A08733DD40010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.4;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "docsetmaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB927508733DD40010E9CD /* Debug */,
+				1DEB927608733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "docsetmaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB927908733DD40010E9CD /* Debug */,
+				1DEB927A08733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
