@@ -137,7 +137,7 @@
     [self makeDirectories:basePath];
     
     if (mIsVerbose) {
-        printf("Making directory: %s\n", [path cStringUsingEncoding:NSUTF8StringEncoding]);
+        printf("Making directory: %s\n", [[path stringByAbbreviatingWithTildeInPath] cStringUsingEncoding:NSUTF8StringEncoding]);
     }
     [fileManager createDirectoryAtPath:path attributes:nil];
 }

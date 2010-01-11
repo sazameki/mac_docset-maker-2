@@ -94,7 +94,9 @@
             printf("Deleting file: %s\n", [destPath cStringUsingEncoding:NSUTF8StringEncoding]);
             [fileManager removeFileAtPath:destPath handler:nil];
         }
-        printf("Copying file: %s to %s\n", [aFilePath cStringUsingEncoding:NSUTF8StringEncoding], [destPath cStringUsingEncoding:NSUTF8StringEncoding]);
+        NSString *shortFilePath = [aFilePath stringByAbbreviatingWithTildeInPath];
+        NSString *shortDestPath = [destPath stringByAbbreviatingWithTildeInPath];
+        printf("Copying file: %s to %s\n", [shortFilePath cStringUsingEncoding:NSUTF8StringEncoding], [shortDestPath cStringUsingEncoding:NSUTF8StringEncoding]);
         [fileManager copyPath:aFilePath toPath:destPath handler:nil];
     }
 }
