@@ -12,12 +12,16 @@
 #import "DSTemplateManager.h"
 
 
+DocumentBuilder* gDocumentBuilderInst = nil;
+
+
 @implementation DocumentBuilder
 
 - (id)init
 {
     self = [super init];
     if (self) {
+        gDocumentBuilderInst = self;
     }
     return self;
 }
@@ -27,11 +31,17 @@
     [mSourceDirPath release];
     [mDestDirPath release];
     [mTemplateDirPath release];
+    [mPriorGroupNames release];
 
     [super dealloc];
 }
 
 #pragma mark -
+
+- (NSArray *)priorGroupNames
+{
+    return mPriorGroupNames;
+}
 
 - (void)setSourceDirPath:(NSString *)path
 {
@@ -185,6 +195,22 @@
     }
     
     DSTemplateManager *templateManager = [[DSTemplateManager alloc] initWithPath:mTemplateDirPath];
+    
+    NSString *groupOrderFilePath = [mTemplateDirPath stringByAppendingPathComponent:@"group-order.txt"];
+    NSString *groupOrderDesc = [NSString stringWithContentsOfFile:groupOrderFilePath];
+    if (groupOrderDesc) {
+        NSArray *groupNames = [groupOrderDesc componentsSeparatedByString:@"\n"];
+        NSMutableArray *priorGroupNames = [NSMutableArray array];
+        for (NSString *aGroupName in groupNames) {
+            aGroupName = [aGroupName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            if ([aGroupName length] > 0) {
+                [priorGroupNames addObject:aGroupName];
+            }
+        }
+        if ([priorGroupNames count] > 0) {
+            mPriorGroupNames = [priorGroupNames retain];
+        }
+    }
     
     NSString *baseDirPath = nil;
     NSString *reflibDirPath = nil;

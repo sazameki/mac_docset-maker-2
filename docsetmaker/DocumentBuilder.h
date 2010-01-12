@@ -17,7 +17,10 @@
     BOOL        mSearchesRecursively;
     BOOL        mIsVerbose;
     BOOL        mUpdatesOuterDocsOnly;
+    NSArray     *mPriorGroupNames;
 }
+
+- (NSArray *)priorGroupNames;
 
 - (void)setSourceDirPath:(NSString *)path;
 - (void)setDestDirPath:(NSString *)path;
@@ -30,4 +33,7 @@
 - (void)build;
 
 @end
+
+
+extern DocumentBuilder *gDocumentBuilderInst;
 

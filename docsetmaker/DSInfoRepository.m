@@ -8,6 +8,7 @@
 
 #import "DSInfoRepository.h"
 #import "DSInformation.h"
+#import "DocumentBuilder.h"
 
 
 static DSInfoRepository *_instance = nil;
@@ -125,6 +126,29 @@ static DSInfoRepository *_instance = nil;
         }
         [ret addObject:aGroupInfo];
     }
+    return ret;
+}
+
+- (NSArray *)sortedGroupInfos
+{
+    NSMutableArray *ret = [NSMutableArray array];
+    
+    NSArray *priorGroupNames = [gDocumentBuilderInst priorGroupNames];
+
+    NSMutableArray *groupInfos = [NSMutableArray arrayWithArray:[self groupInfos]];
+    
+    for (NSString *aPriorGroupName in priorGroupNames) {
+        for (DSInformation *aGroupInfo in groupInfos) {
+            if ([[aGroupInfo value] isEqualToString:aPriorGroupName]) {
+                [ret addObject:aGroupInfo];
+                [groupInfos removeObject:aGroupInfo];
+                break;
+            }
+        }
+    }
+    
+    [ret addObjectsFromArray:groupInfos];
+    
     return ret;
 }
 
@@ -393,7 +417,7 @@ static DSInfoRepository *_instance = nil;
         [script appendString:@"$structs = Array.new\n"];
         [script appendString:@"$classes_and_structs = Array.new\n\n"];
         
-        NSArray *groupInfos = [self groupInfos];
+        NSArray *groupInfos = [self sortedGroupInfos];
         
         for (int i = 0; i < [groupInfos count]; i++) {
             DSInformation *aGroupInfo = [groupInfos objectAtIndex:i];

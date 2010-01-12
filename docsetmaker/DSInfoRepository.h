@@ -25,6 +25,7 @@
 - (void)addInfos:(NSArray *)infos;
 
 - (NSArray *)groupInfos;
+- (NSArray *)sortedGroupInfos;
 
 - (NSArray *)groupNames;
 - (NSArray *)sortedGroupNames;
