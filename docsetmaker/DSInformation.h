@@ -49,6 +49,7 @@
 
 - (BOOL)isGroup;
 
+- (BOOL)isInstantVariable;
 - (BOOL)isInstantMethod;
 - (BOOL)isClassMethod;
 

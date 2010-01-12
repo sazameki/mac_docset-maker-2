@@ -10,6 +10,7 @@
 #import "DSInfoRepository.h"
 #import "DSCommentParser.h"
 #import "DSTemplateManager.h"
+#import "NSString+RelativePath.h"
 
 
 DocumentBuilder* gDocumentBuilderInst = nil;
@@ -28,6 +29,7 @@ DocumentBuilder* gDocumentBuilderInst = nil;
 
 - (void)dealloc
 {
+    [mCurrentDirPath release];
     [mSourceDirPath release];
     [mDestDirPath release];
     [mTemplateDirPath release];
@@ -41,6 +43,17 @@ DocumentBuilder* gDocumentBuilderInst = nil;
 - (NSArray *)priorGroupNames
 {
     return mPriorGroupNames;
+}
+
+- (NSString *)currentDirPath
+{
+    return mCurrentDirPath;
+}
+
+- (void)setCurrrentDirPath:(NSString *)path
+{
+    [mCurrentDirPath release];
+    mCurrentDirPath = [path retain];
 }
 
 - (void)setSourceDirPath:(NSString *)path
@@ -131,7 +144,7 @@ DocumentBuilder* gDocumentBuilderInst = nil;
     }
     
     if (mIsVerbose) {
-        printf("Deleting directory: %s\n", [path cStringUsingEncoding:NSUTF8StringEncoding]);
+        printf("Deleting directory: %s\n", [[path relativePathFromBaseDirPath:mCurrentDirPath] cStringUsingEncoding:NSUTF8StringEncoding]);
     }
     [[NSFileManager defaultManager] removeFileAtPath:path handler:nil];
 }
@@ -147,7 +160,7 @@ DocumentBuilder* gDocumentBuilderInst = nil;
     [self makeDirectories:basePath];
     
     if (mIsVerbose) {
-        printf("Making directory: %s\n", [[path stringByAbbreviatingWithTildeInPath] cStringUsingEncoding:NSUTF8StringEncoding]);
+        printf("Making directory: %s\n", [[path relativePathFromBaseDirPath:mCurrentDirPath] cStringUsingEncoding:NSUTF8StringEncoding]);
     }
     [fileManager createDirectoryAtPath:path attributes:nil];
 }
@@ -165,9 +178,9 @@ DocumentBuilder* gDocumentBuilderInst = nil;
     }
     
     if (mIsVerbose) {
-        printf("Dest dir: %s\n", [mDestDirPath cStringUsingEncoding:NSUTF8StringEncoding]);
-        printf("Source dir: %s\n", [mSourceDirPath cStringUsingEncoding:NSUTF8StringEncoding]);
-        printf("Template dir: %s\n", [mTemplateDirPath cStringUsingEncoding:NSUTF8StringEncoding]);
+        printf("Dest dir: %s\n", [[mDestDirPath relativePathFromBaseDirPath:[self currentDirPath]] cStringUsingEncoding:NSUTF8StringEncoding]);
+        printf("Source dir: %s\n", [[mSourceDirPath relativePathFromBaseDirPath:[self currentDirPath]] cStringUsingEncoding:NSUTF8StringEncoding]);
+        printf("Template dir: %s\n", [[mTemplateDirPath relativePathFromBaseDirPath:[self currentDirPath]] cStringUsingEncoding:NSUTF8StringEncoding]);
         printf("Recursively: %s\n", (mSearchesRecursively? "YES": "NO"));
     }
  

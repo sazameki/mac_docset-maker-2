@@ -238,6 +238,18 @@ int DSCompareInfo(id anInfo1, id anInfo2, void *context)
     return [[self tagName] isEqualToString:@"@group"];
 }
 
+- (BOOL)isInstantVariable
+{
+    if (![[self tagName] isEqualToString:@"@var"]) {
+        return NO;
+    }
+    if ([[self languageType] isEqualToString:@"cpp"]) {
+        NSString *decl = [self declaration];
+        return ![decl hasPrefix:@"static"];
+    }
+    return NO;
+}
+
 - (BOOL)isInstantMethod
 {
     if (![[self tagName] isEqualToString:@"@method"]) {
@@ -407,6 +419,8 @@ int DSCompareInfo(id anInfo1, id anInfo2, void *context)
                 [script appendFormat:@"  %@.add_instant_method(%@)\n", taskScriptName, childScriptName];
             } else if ([aChildInfo isClassMethod]) {
                 [script appendFormat:@"  %@.add_class_method(%@)\n", taskScriptName, childScriptName];
+            } else if ([aChildInfo isInstantVariable]) {
+                [script appendFormat:@"  %@.add_inst_var(%@)\n", taskScriptName, childScriptName];
             }
         }
     }

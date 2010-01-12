@@ -7,6 +7,8 @@
 //
 
 #import "DSTemplateManager.h"
+#import "DocumentBuilder.h"
+#import "NSString+RelativePath.h"
 
 
 @implementation DSTemplateManager
@@ -91,12 +93,14 @@
         NSString *aFilePath = [mTemplateDirPath stringByAppendingPathComponent:aFileName];
         NSString *destPath = [basePath stringByAppendingPathComponent:aFileName];
         if ([fileManager fileExistsAtPath:destPath]) {
-            printf("Deleting file: %s\n", [destPath cStringUsingEncoding:NSUTF8StringEncoding]);
+            printf("Deleting file: %s\n", [[destPath relativePathFromBaseDirPath:[gDocumentBuilderInst currentDirPath]] cStringUsingEncoding:NSUTF8StringEncoding]);
             [fileManager removeFileAtPath:destPath handler:nil];
         }
         NSString *shortFilePath = [aFilePath stringByAbbreviatingWithTildeInPath];
         NSString *shortDestPath = [destPath stringByAbbreviatingWithTildeInPath];
-        printf("Copying file: %s to %s\n", [shortFilePath cStringUsingEncoding:NSUTF8StringEncoding], [shortDestPath cStringUsingEncoding:NSUTF8StringEncoding]);
+        printf("Copying file: %s to %s\n",
+               [[shortFilePath relativePathFromBaseDirPath:[gDocumentBuilderInst currentDirPath]] cStringUsingEncoding:NSUTF8StringEncoding],
+               [[shortDestPath relativePathFromBaseDirPath:[gDocumentBuilderInst currentDirPath]] cStringUsingEncoding:NSUTF8StringEncoding]);
         [fileManager copyPath:aFilePath toPath:destPath handler:nil];
     }
 }

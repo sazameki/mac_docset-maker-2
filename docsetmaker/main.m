@@ -10,6 +10,7 @@ void setupBuilder(DocumentBuilder *builder, int argc, const char *argv[])
 {
     NSString *currentDirPath = [NSString stringWithUTF8String:(const char *)getcwd(NULL, 0)];
     
+    [builder setCurrrentDirPath:currentDirPath];
     [builder setSourceDirPath:currentDirPath];
     [builder setDestDirPath:currentDirPath];
     [builder setUsesDocsetPackage:NO];
@@ -42,7 +43,7 @@ void setupBuilder(DocumentBuilder *builder, int argc, const char *argv[])
             const char *cPath = argv[i];
             NSString *path = [NSString stringWithUTF8String:cPath];
             if ([path characterAtIndex:0] != '/') {
-                path = [path relativePathToAbsolutePathWithBasePath:currentDirPath];
+                path = [path absolutePathFromBaseDirPath:currentDirPath];
             }
             [builder setDestDirPath:path];
         }
@@ -55,7 +56,7 @@ void setupBuilder(DocumentBuilder *builder, int argc, const char *argv[])
             const char *cPath = argv[i];
             NSString *path = [NSString stringWithUTF8String:cPath];
             if ([path characterAtIndex:0] != '/') {
-                path = [path relativePathToAbsolutePathWithBasePath:currentDirPath];
+                path = [path absolutePathFromBaseDirPath:currentDirPath];
             }
             [builder setSourceDirPath:path];
         }
@@ -68,7 +69,7 @@ void setupBuilder(DocumentBuilder *builder, int argc, const char *argv[])
             const char *cPath = argv[i];
             NSString *path = [NSString stringWithUTF8String:cPath];
             if ([path characterAtIndex:0] != '/') {
-                path = [path relativePathToAbsolutePathWithBasePath:currentDirPath];
+                path = [path absolutePathFromBaseDirPath:currentDirPath];
             }
             [builder setTemplateDirPath:path];
         }

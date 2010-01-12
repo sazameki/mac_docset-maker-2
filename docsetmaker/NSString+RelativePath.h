@@ -1,9 +1,8 @@
 //
 //  NSString+RelativePath.h
-//  docsetmaker
 //
-//  Created by numata on 09/09/19.
-//  Copyright 2009 Satoshi Numata. All rights reserved.
+//  Created by numata on 2010/01/12.
+//  Copyright 2010 Satoshi Numata. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,7 +10,8 @@
 
 @interface NSString (RelativePath)
 
-- (NSString *)relativePathToAbsolutePathWithBasePath:(NSString *)basePath;
+- (NSString *)absolutePathFromBaseDirPath:(NSString *)baseDirPath;
+- (NSString *)relativePathFromBaseDirPath:(NSString *)baseDirPath;
 
 @end
 

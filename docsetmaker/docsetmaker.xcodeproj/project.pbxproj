@@ -11,13 +11,13 @@
 		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
 		8DD76F9F0486AA7600D96B5E /* docsetmaker.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859EA3029092ED04C91782 /* docsetmaker.1 */; };
 		8E7D911E106514E400BE8FDF /* DocumentBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D911D106514E400BE8FDF /* DocumentBuilder.m */; };
-		8E7D92521065290D00BE8FDF /* NSString+RelativePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D92511065290D00BE8FDF /* NSString+RelativePath.m */; };
 		8E7D925510652CB400BE8FDF /* NSString+Tokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D925410652CB400BE8FDF /* NSString+Tokenizer.m */; };
 		8E7D92A310652F7400BE8FDF /* DSInfoRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D929C10652F7400BE8FDF /* DSInfoRepository.m */; };
 		8E7D92A410652F7400BE8FDF /* DSInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D929E10652F7400BE8FDF /* DSInformation.m */; };
 		8E7D92A510652F7400BE8FDF /* DSCommentParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D92A010652F7400BE8FDF /* DSCommentParser.m */; };
 		8E7D964510654A7500BE8FDF /* DSTemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D964410654A7500BE8FDF /* DSTemplateManager.m */; };
 		8E7D964B10654AF400BE8FDF /* DSTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D964A10654AF400BE8FDF /* DSTemplate.m */; };
+		8EA7660B10FC2441001E4D53 /* NSString+RelativePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA7660A10FC2441001E4D53 /* NSString+RelativePath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,8 +40,6 @@
 		8DD76FA10486AA7600D96B5E /* docsetmaker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = docsetmaker; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7D911C106514E400BE8FDF /* DocumentBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentBuilder.h; sourceTree = "<group>"; };
 		8E7D911D106514E400BE8FDF /* DocumentBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentBuilder.m; sourceTree = "<group>"; };
-		8E7D92501065290D00BE8FDF /* NSString+RelativePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RelativePath.h"; sourceTree = "<group>"; };
-		8E7D92511065290D00BE8FDF /* NSString+RelativePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RelativePath.m"; sourceTree = "<group>"; };
 		8E7D925310652CB400BE8FDF /* NSString+Tokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tokenizer.h"; sourceTree = "<group>"; };
 		8E7D925410652CB400BE8FDF /* NSString+Tokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tokenizer.m"; sourceTree = "<group>"; };
 		8E7D929B10652F7400BE8FDF /* DSInfoRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSInfoRepository.h; sourceTree = "<group>"; };
@@ -54,6 +52,8 @@
 		8E7D964410654A7500BE8FDF /* DSTemplateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTemplateManager.m; sourceTree = "<group>"; };
 		8E7D964910654AF400BE8FDF /* DSTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTemplate.h; sourceTree = "<group>"; };
 		8E7D964A10654AF400BE8FDF /* DSTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTemplate.m; sourceTree = "<group>"; };
+		8EA7660910FC2441001E4D53 /* NSString+RelativePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RelativePath.h"; sourceTree = "<group>"; };
+		8EA7660A10FC2441001E4D53 /* NSString+RelativePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RelativePath.m"; sourceTree = "<group>"; };
 		C6859EA3029092ED04C91782 /* docsetmaker.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = docsetmaker.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,8 +137,8 @@
 		8E7D964C10654AFA00BE8FDF /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				8E7D92501065290D00BE8FDF /* NSString+RelativePath.h */,
-				8E7D92511065290D00BE8FDF /* NSString+RelativePath.m */,
+				8EA7660910FC2441001E4D53 /* NSString+RelativePath.h */,
+				8EA7660A10FC2441001E4D53 /* NSString+RelativePath.m */,
 				8E7D925310652CB400BE8FDF /* NSString+Tokenizer.h */,
 				8E7D925410652CB400BE8FDF /* NSString+Tokenizer.m */,
 			);
@@ -198,13 +198,13 @@
 			files = (
 				8DD76F9A0486AA7600D96B5E /* main.m in Sources */,
 				8E7D911E106514E400BE8FDF /* DocumentBuilder.m in Sources */,
-				8E7D92521065290D00BE8FDF /* NSString+RelativePath.m in Sources */,
 				8E7D925510652CB400BE8FDF /* NSString+Tokenizer.m in Sources */,
 				8E7D92A310652F7400BE8FDF /* DSInfoRepository.m in Sources */,
 				8E7D92A410652F7400BE8FDF /* DSInformation.m in Sources */,
 				8E7D92A510652F7400BE8FDF /* DSCommentParser.m in Sources */,
 				8E7D964510654A7500BE8FDF /* DSTemplateManager.m in Sources */,
 				8E7D964B10654AF400BE8FDF /* DSTemplate.m in Sources */,
+				8EA7660B10FC2441001E4D53 /* NSString+RelativePath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

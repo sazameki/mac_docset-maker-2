@@ -10,6 +10,7 @@
 
 
 @interface DocumentBuilder : NSObject {
+    NSString    *mCurrentDirPath;
     NSString    *mSourceDirPath;
     NSString    *mDestDirPath;
     NSString    *mTemplateDirPath;
@@ -22,6 +23,8 @@
 
 - (NSArray *)priorGroupNames;
 
+- (NSString *)currentDirPath;
+- (void)setCurrrentDirPath:(NSString *)path;
 - (void)setSourceDirPath:(NSString *)path;
 - (void)setDestDirPath:(NSString *)path;
 - (void)setTemplateDirPath:(NSString *)path;
