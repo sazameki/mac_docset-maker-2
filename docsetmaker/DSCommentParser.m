@@ -294,7 +294,7 @@
                                     break;
                                 }
                             }
-                            
+
                             DSInformation *declInfo = [[[DSInformation alloc] initWithTag:@"@declare"] autorelease];
                             [declInfo setValue:[declStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
                             [mLastInfo addChildInformation:declInfo];

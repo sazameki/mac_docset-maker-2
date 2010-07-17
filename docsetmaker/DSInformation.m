@@ -141,6 +141,8 @@ int DSCompareInfo(id anInfo1, id anInfo2, void *context)
     if ([decl length] == 0) {
         decl = nil;
     }
+    decl = [decl stringByReplacingOccurrencesOfString:@"<" withString:@"&lt;"];
+    decl = [decl stringByReplacingOccurrencesOfString:@">" withString:@"&gt;"];
     return decl;
 }
 
