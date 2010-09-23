@@ -60,28 +60,6 @@ static DSInfoRepository *_instance = nil;
     return ret;
 }
 
-- (NSArray *)sortedGroupNames
-{
-    // Sort specific for Karakuri Framework just now (2009/09/15)
-    // TODO: Prepare any kind of setting method for users
-    NSArray *priorGroupNames = [NSArray arrayWithObjects:@"Game Foundation", @"Game 2D Graphics", @"Game Audio", @"Game Text Processing", @"Game Controls", @"Game 2D Simulator", @"Game Network", nil];
-    
-    NSMutableArray *ret = [NSMutableArray array];
-    NSMutableArray *groupNames = [NSMutableArray arrayWithArray:[self groupNames]];
-    
-    for (int i = 0; i < [priorGroupNames count]; i++) {
-        NSString *aPriorGroupName = [priorGroupNames objectAtIndex:i];
-        if ([groupNames containsObject:aPriorGroupName]) {
-            [ret addObject:aPriorGroupName];
-        }
-    }
-    
-    [groupNames removeObjectsInArray:ret];
-    [ret addObjectsFromArray:groupNames];
-    
-    return ret;
-}
-
 - (DSInformation *)groupInfoForName:(NSString *)groupName
 {
     DSInformation *ret = nil;
@@ -298,6 +276,12 @@ static DSInfoRepository *_instance = nil;
     [script appendString:@"  end\n"];
     [script appendString:@"  def d_tag\n"];
     [script appendString:@"    return @d_tag\n"];
+    [script appendString:@"  end\n"];
+    [script appendString:@"  def d_deprecated=(flag)\n"];
+    [script appendString:@"    @d_deprecated = flag\n"];
+    [script appendString:@"  end\n"];
+    [script appendString:@"  def d_deprecated\n"];
+    [script appendString:@"    return @d_deprecated\n"];
     [script appendString:@"  end\n"];
     [script appendString:@"  def d_declare=(str)\n"];
     [script appendString:@"    @d_declare = str\n"];

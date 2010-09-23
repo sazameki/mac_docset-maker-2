@@ -166,29 +166,35 @@
         
         if (c1 == '@') {
             NSString *tagName = [self getStringUntilWhiteSpace];
-            [self skipWhiteSpaces];            
-            NSString *line = [self getStringUntilLineEnd];
-            
-            if (!currentInfo) {
-                currentInfo = [[DSInformation alloc] initWithTag:tagName];
-                [currentInfo setValue:[line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
-                
-                if ([tagName isEqualToString:@"@class"] || [tagName isEqualToString:@"@struct"]) {
-                    mCurrentClassLevelInfo = currentInfo;
-                    [mInfos addObject:currentInfo];
-                } else if ([tagName isEqualToString:@"@function"]) {
-                    mCurrentClassLevelInfo = nil;
-                } else if ([tagName isEqualToString:@"@enum"]) {
-                    mCurrentClassLevelInfo = nil;
+            if ([tagName isEqualToString:@"@deprecated"]) {
+                if (mCurrentClassLevelInfo) {
+                    [mCurrentClassLevelInfo setDeprecated:YES];
                 }
-
-                DSInformation *declaredInInfo = [[DSInformation alloc] initWithTag:@"*declared-in"];
-                [declaredInInfo setValue:mPath];
-                [currentInfo addChildInformation:declaredInInfo];
             } else {
-                prevInfo = [[DSInformation alloc] initWithTag:tagName];
-                [prevInfo setValue:line];
-                [currentInfo addChildInformation:prevInfo];
+                [self skipWhiteSpaces];
+                NSString *line = [self getStringUntilLineEnd];
+                
+                if (!currentInfo) {
+                    currentInfo = [[DSInformation alloc] initWithTag:tagName];
+                    [currentInfo setValue:[line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+                    
+                    if ([tagName isEqualToString:@"@class"] || [tagName isEqualToString:@"@struct"]) {
+                        mCurrentClassLevelInfo = currentInfo;
+                        [mInfos addObject:currentInfo];
+                    } else if ([tagName isEqualToString:@"@function"]) {
+                        mCurrentClassLevelInfo = nil;
+                    } else if ([tagName isEqualToString:@"@enum"]) {
+                        mCurrentClassLevelInfo = nil;
+                    }
+
+                    DSInformation *declaredInInfo = [[DSInformation alloc] initWithTag:@"*declared-in"];
+                    [declaredInInfo setValue:mPath];
+                    [currentInfo addChildInformation:declaredInInfo];
+                } else {
+                    prevInfo = [[DSInformation alloc] initWithTag:tagName];
+                    [prevInfo setValue:line];
+                    [currentInfo addChildInformation:prevInfo];
+                }
             }
         } else {
             BOOL isAtCommentEnd = NO;

@@ -14,6 +14,7 @@
     NSString        *mValue;
     NSMutableArray  *mChildInfos;
     DSInformation   *mParentInfo;
+    BOOL            mIsDeprecated;
 }
 
 - (id)initWithTag:(NSString *)tag;
@@ -52,6 +53,9 @@
 - (BOOL)isInstantVariable;
 - (BOOL)isInstantMethod;
 - (BOOL)isClassMethod;
+
+- (BOOL)isDeprecated;
+- (void)setDeprecated:(BOOL)flag;
 
 - (NSString *)rubyScriptForParent:(DSInformation *)parentInfo parentScriptName:(NSString *)parentScriptName scriptName:(NSString **)childScriptName;
 

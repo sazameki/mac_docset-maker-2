@@ -29,6 +29,7 @@ int DSCompareInfo(id anInfo1, id anInfo2, void *context)
         [self setValue:@""];
         
         mChildInfos = [[NSMutableArray array] retain];
+        mIsDeprecated = NO;
     }
     return self;
 }
@@ -276,6 +277,16 @@ int DSCompareInfo(id anInfo1, id anInfo2, void *context)
     return NO;
 }
 
+- (BOOL)isDeprecated
+{
+    return mIsDeprecated;
+}
+
+- (void)setDeprecated:(BOOL)flag
+{
+    mIsDeprecated = flag;
+}
+
 - (NSString *)newScriptName
 {
     static int count = 0;
@@ -362,7 +373,8 @@ int DSCompareInfo(id anInfo1, id anInfo2, void *context)
     [script appendFormat:@"  %@.d_name = \"%@\"\n", scriptName, [self value]];
     [script appendFormat:@"  %@.d_declare = \"%@\"\n", scriptName, [self declaration]];
     [script appendFormat:@"  %@.d_tag = \"//apple_ref/%@/cl/%@\"\n", scriptName, [self languageType], [self docIdentifier]];
-
+    [script appendFormat:@"  %@.d_deprecated = %@\n", scriptName, ([self isDeprecated]? @"true": @"false")];
+    
     NSString *langType = [self languageType];
     if ([langType isEqualToString:@"cpp"]) {
         NSString *decl = [self declaration];
